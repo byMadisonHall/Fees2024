@@ -64,7 +64,7 @@ Calculated the percent change in net expense ratios from 2021 to 2022 and 2022 t
 
 ```{r Data adjustments, echo=FALSE}
 
-full <- read_csv("data/results/general/data_combined.csv",
+full <- read_csv("data/data_combined.csv",
                  guess_max = 20000)
 
 
@@ -88,9 +88,10 @@ Adjusted_Data <- full %>%
     )
   ) %>%
   mutate(
-    Net_Asst_2021_AVG = rowMeans(.[, 152:163], na.rm = TRUE),
-    Net_Asst_2022_AVG = rowMeans(.[, 164:175], na.rm = TRUE),
-    Net_Asst_2023_AVG = rowMeans(.[, 176:187], na.rm = TRUE),
+    Net_Asst_2021_AVG = rowMeans(.[, 16:27], na.rm = TRUE),
+    Net_Asst_2022_AVG = rowMeans(.[, 28:39], na.rm = TRUE),
+    Net_Asst_2023_AVG = rowMeans(.[, 40:51], na.rm = TRUE),
+    Net_Asst_2024_AVG = rowMeans(.[, 52:63], na.rm = TRUE),
     Asst_By_Fee_2021 = Net_Asst_2021_AVG * Annual.Report.Adjusted.Expense.Ratio..Year2021,
     Asst_By_Fee_2022 = Net_Asst_2022_AVG * Annual.Report.Adjusted.Expense.Ratio..Year2022,
     Asst_By_Fee_2023 = Net_Asst_2023_AVG * Annual.Report.Adjusted.Expense.Ratio..Year2023,
